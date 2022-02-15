@@ -1,4 +1,5 @@
 using AutoMapper;
+using GeekShopping.CartAPI.RabbitMQSender;
 using GeekShopping.CouponAPI.Config;
 using GeekShopping.CouponAPI.DB.Model.Context;
 using GeekShopping.CouponAPI.Repository;
@@ -23,6 +24,8 @@ var builder = WebApplication.CreateBuilder(args);
     // Dependency injection
     // Injects ProductRepository to application
     builder.Services.AddScoped<ICartRepository, CartRepository>();
+
+    builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 
 // Add services to the container.
 builder.Services.AddControllers();
