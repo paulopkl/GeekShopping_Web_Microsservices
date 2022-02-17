@@ -1,6 +1,6 @@
-﻿using GeekShopping.CouponAPI.DB.Model.Base;
+﻿using GeekShopping.CartAPI.DB.Model.Base;
 
-namespace GeekShopping.CouponAPI.DB.Model
+namespace GeekShopping.CartAPI.DB.Model
 {
     public class Cart : BaseEntity
     {

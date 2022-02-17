@@ -81,7 +81,13 @@ namespace GeekShop.web.Controllers
 
             var response = await _cartService.Checkout(model.CartHeader, token);
 
-            if (response) return RedirectToAction(nameof(Confirmation));
+            if (response != null && response.GetType() == typeof(string))
+            {
+                TempData["Error"] = response;
+                
+                return RedirectToAction(nameof(Checkout));
+            }
+            else if (response != null) return RedirectToAction(nameof(Confirmation));
 
             return View(model);
         }
@@ -108,7 +114,7 @@ namespace GeekShop.web.Controllers
 
                     if (coupon?.CouponCode != null)
                     {
-                        response.CartHeader.DiscountAmount = coupon.DescountAmount;
+                        response.CartHeader.DiscountAmount = coupon.DiscountAmount;
                     }
                 }
 

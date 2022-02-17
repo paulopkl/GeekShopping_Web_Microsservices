@@ -1,8 +1,8 @@
-﻿using GeekShopping.CouponAPI.DB.Model.Base;
+﻿using GeekShopping.CartAPI.DB.Model.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GeekShopping.CouponAPI.DB.Model
+namespace GeekShopping.CartAPI.DB.Model
 {
     [Table("TProduct")]
     public class Product

@@ -1,8 +1,8 @@
 using AutoMapper;
 using GeekShopping.CartAPI.RabbitMQSender;
-using GeekShopping.CouponAPI.Config;
-using GeekShopping.CouponAPI.DB.Model.Context;
-using GeekShopping.CouponAPI.Repository;
+using GeekShopping.CartAPI.Config;
+using GeekShopping.CartAPI.DB.Model.Context;
+using GeekShopping.CartAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -24,11 +24,16 @@ var builder = WebApplication.CreateBuilder(args);
     // Dependency injection
     // Injects ProductRepository to application
     builder.Services.AddScoped<ICartRepository, CartRepository>();
+    builder.Services.AddScoped<ICouponRepository, CouponRepository>();
 
     builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+    builder.Services.AddHttpClient<ICouponRepository, CouponRepository>(
+        s => s.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CouponAPI"])
+    );
 
     // Configures authentication
     builder.Services.AddAuthentication("Bearer")

@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using GeekShopping.CouponAPI.Data.ValueObjects;
-using GeekShopping.CouponAPI.DB.Model;
-using GeekShopping.CouponAPI.DB.Model.Context;
+using GeekShopping.CartAPI.Data.ValueObjects;
+using GeekShopping.CartAPI.DB.Model;
+using GeekShopping.CartAPI.DB.Model.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace GeekShopping.CouponAPI.Repository
+namespace GeekShopping.CartAPI.Repository
 {
     public class CartRepository : ICartRepository
     {

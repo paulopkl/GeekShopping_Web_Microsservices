@@ -1,5 +1,5 @@
 ﻿using GeekShopping.MessageBus;
-using System.Text.Json
+using System.Text.Json;
 using RabbitMQ.Client;
 using GeekShopping.CartAPI.Messages;
 using System.Text;

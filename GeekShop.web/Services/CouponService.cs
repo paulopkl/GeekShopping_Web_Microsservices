@@ -4,6 +4,7 @@ using GeekShop.web.Services.Utils;
 using GeekShop.Web.Models;
 using System.Net;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace GeekShop.web.Services
 {
@@ -23,9 +24,12 @@ namespace GeekShop.web.Services
 
             var response = await _client.GetAsync($"{BasePath}/{code}");
 
+            var content = await response.Content.ReadAsStringAsync();
+
             if (response.StatusCode != HttpStatusCode.OK) return new CouponViewModel();
 
-            return await response.ReadContentAs<CouponViewModel>();
+            // Convert from JSON to Object Entity
+            return JsonSerializer.Deserialize<CouponViewModel>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
     }
 }

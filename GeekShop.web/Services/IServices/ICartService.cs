@@ -18,6 +18,6 @@ namespace GeekShop.web.Services.IServices
 
         Task<bool> ClearCart(string userId, string token);
 
-        Task<bool> Checkout(CartHeaderViewModel cartHeader, string token);
+        Task<Object> Checkout(CartHeaderViewModel cartHeader, string token);
     }
 }

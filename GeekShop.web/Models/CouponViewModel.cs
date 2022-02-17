@@ -6,6 +6,6 @@
 
         public string CouponCode { get; set; }
 
-        public decimal DescountAmount { get; set; }
+        public decimal DiscountAmount { get; set; }
     }
 }
