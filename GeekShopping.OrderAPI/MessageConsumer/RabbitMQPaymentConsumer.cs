@@ -1,6 +1,4 @@
-﻿using GeekShopping.OrderAPI.DB.Model;
-using GeekShopping.OrderAPI.Messages;
-using GeekShopping.OrderAPI.RabbitMQSender;
+﻿using GeekShopping.OrderAPI.Messages;
 using GeekShopping.OrderAPI.Repository;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -14,8 +12,7 @@ namespace GeekShopping.OrderAPI.MessageConsumer
         private readonly OrderRepository _repository;
         private IConnection _connection;
         private IModel _channel;
-        private const string _paymentResultQueue = "orderpaymentresultqueue";
-        private const string ExchangeName = "FanoutPaymentUpdateExchange";
+        private const string ExchangeName = "DirectPaymentUpdateExchange";
         private const string PaymentOrderUpdateQueueName = "PaymentOrderUpdateQueueName";
 
         public RabbitMQPaymentConsumer(OrderRepository repository)
@@ -65,9 +62,11 @@ namespace GeekShopping.OrderAPI.MessageConsumer
             {
                 await _repository.UpdateOrderPaymentStatus(vo.OrderId, vo.Status);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
 
+                throw new Exception(ex.Message);
             }
         }
     }

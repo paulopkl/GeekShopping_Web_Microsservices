@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mIa5vpeycBmHLlmZqw7ZxmMKHP2LeHS8fM8Z8SuqQiYnwvemkpaOA1ECLaAECX6LEs8eti/Cke0/v4du8FsT4Q==",
+  "dgSpecHash": "v4xFP1PkgBFO5Qlkx7Ubn9VUVxFn/goQW4nRB0jlM32sId6ejdJNYac1v1wHTG2RrX5DCGmDorp8/QwaVHFV3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Paulo\\Documents\\Projetos\\DotNET\\Microsservices-dotNET6\\GeekShop\\GeekShopping.APIGateway\\GeekShopping.APIGateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paulo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
-    "C:\\Users\\Paulo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.2\\microsoft.aspnetcore.authentication.jwtbearer.6.0.2.nupkg.sha512",
+    "C:\\Users\\Paulo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.1\\microsoft.aspnetcore.jsonpatch.6.0.1.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\6.0.1\\microsoft.aspnetcore.middlewareanalysis.6.0.1.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.1\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.1.nupkg.sha512",

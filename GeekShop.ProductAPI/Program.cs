@@ -29,7 +29,7 @@ builder.Services.AddControllers();
     // Configures authentication
     builder.Services.AddAuthentication("Bearer")
         .AddJwtBearer(
-            "Bearer", 
+            "Bearer",
             options =>
             {
                 options.Authority = builder.Configuration["Authority"];
