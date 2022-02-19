@@ -43,3 +43,4 @@ C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekSho
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.OrderAPI\obj\Debug\net6.0\ref\GeekShopping.OrderAPI.dll
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.OrderAPI\obj\Debug\net6.0\GeekShopping.OrderAPI.pdb
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.OrderAPI\obj\Debug\net6.0\GeekShopping.OrderAPI.genruntimeconfig.cache
+C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.OrderAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll

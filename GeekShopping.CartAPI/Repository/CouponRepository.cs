@@ -27,7 +27,7 @@ namespace GeekShopping.CartAPI.Repository
 
             if (response.StatusCode != HttpStatusCode.OK) return new CouponVO();
 
-            return JsonSerializer.Deserialize<CouponViewModel>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            return JsonSerializer.Deserialize<CouponVO>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
     }
 }

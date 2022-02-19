@@ -2,7 +2,6 @@ C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekSho
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\bin\Debug\net6.0\GeekShopping.MessageBus.dll
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\bin\Debug\net6.0\ref\GeekShopping.MessageBus.dll
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\bin\Debug\net6.0\GeekShopping.MessageBus.pdb
-C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\obj\Debug\net6.0\GeekShopping.MessageBus.csproj.AssemblyReference.cache
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\obj\Debug\net6.0\GeekShopping.MessageBus.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\obj\Debug\net6.0\GeekShopping.MessageBus.AssemblyInfoInputs.cache
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShopping.MessageBus\obj\Debug\net6.0\GeekShopping.MessageBus.AssemblyInfo.cs

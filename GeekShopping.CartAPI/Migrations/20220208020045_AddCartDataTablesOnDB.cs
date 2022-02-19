@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GeekShopping.CouponAPI.Migrations
+namespace GeekShopping.CartAPI.Migrations
 {
     public partial class AddCartDataTablesOnDB : Migration
     {

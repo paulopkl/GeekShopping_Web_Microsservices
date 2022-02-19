@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GeekShopping.CouponAPI.Migrations
+namespace GeekShopping.CartAPI.Migrations
 {
     public partial class AddCouponDataTablesOnDB : Migration
     {

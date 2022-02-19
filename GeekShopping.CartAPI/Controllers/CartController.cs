@@ -107,6 +107,8 @@ namespace GeekShopping.CouponAPI.Controllers
             var queueName = "checkoutqueue";
             _rabbitMQMessageSender.SendMessage(vo, queueName);
 
+            await _cartRepository.ClearCart(vo.UserId);
+
             return Ok(vo);
         }
     }
