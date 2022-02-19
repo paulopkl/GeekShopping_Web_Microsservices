@@ -42,3 +42,5 @@ C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekSho
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShop.ProductAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShop.ProductAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShop.ProductAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShop.ProductAPI\obj\Debug\net6.0\GeekShop.ProductAPI.Properties.Resources.resources
+C:\Users\Paulo\Documents\Projetos\DotNET\Microsservices-dotNET6\GeekShop\GeekShop.ProductAPI\obj\Debug\net6.0\GeekShop.ProductAPI.csproj.GenerateResource.cache

@@ -16,8 +16,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
     // Configures authentication
     builder.Services.AddAuthentication("Bearer")
         .AddJwtBearer(
@@ -33,8 +31,8 @@ var app = builder.Build();
             }
     );
 
-    // Configures authorization
-    builder.Services.AddAuthorization(options =>
+// Configures authorization
+builder.Services.AddAuthorization(options =>
     {
         options.AddPolicy("ApiScope", policy =>
         {
@@ -43,11 +41,8 @@ var app = builder.Build();
         });
     });
 
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-    builder.Services.AddEndpointsApiExplorer();
-
-    // Configuring Swagger
-    builder.Services.AddSwaggerGen(c =>
+// Configuring Swagger
+builder.Services.AddSwaggerGen(c =>
     {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeekShopping.PaymentAPI", Version = "v1" });
         c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -76,6 +71,9 @@ var app = builder.Build();
                     }
                 });
     });
+
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

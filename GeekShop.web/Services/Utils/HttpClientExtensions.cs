@@ -10,7 +10,7 @@ namespace GeekShop.web.Services.Utils
 
         public static async Task<T> ReadContentAs<T>(this HttpResponseMessage response)
         {
-            Console.WriteLine(response);
+            //Console.WriteLine(response);
 
             // Verify the status code
             if (!response.IsSuccessStatusCode) throw new ApplicationException($"Something went wrong calling the API: {response.ReasonPhrase}");
@@ -26,7 +26,7 @@ namespace GeekShop.web.Services.Utils
         {
             // Verify the status code
             if (!response.IsSuccessStatusCode) throw new ApplicationException($"Something went wrong calling the API: {response.ReasonPhrase}");
-
+             
             if (response.StatusCode == HttpStatusCode.NoContent) return true;
 
             return false;
