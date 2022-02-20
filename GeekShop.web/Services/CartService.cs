@@ -24,14 +24,19 @@ namespace GeekShop.web.Services
             return await response.ReadContentAs<CartViewModel>();
         }
 
-        public async Task<CartViewModel> AddItemToCart(CartViewModel model, string token)
+        public async Task<Object> AddItemToCart(CartViewModel model, string token)
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var response = await _client.PostAsJson($"{BasePath}/add-cart", model);
 
             if (response.IsSuccessStatusCode) return await response.ReadContentAs<CartViewModel>();
-            else throw new Exception("Something went wrong when calling API");
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+
+                return badResultContent;
+            }
         }
 
         public async Task<CartViewModel> UpdateCart(CartViewModel model, string token)

@@ -23,9 +23,7 @@ namespace GeekShop.web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var token = await HttpContext.GetTokenAsync("");
-
-            var products = await _productService.FindAllProducts(token);
+            var products = await _productService.FindAllProducts("");
 
             return View(products);
         }
@@ -51,19 +49,23 @@ namespace GeekShop.web.Controllers
             {
                 CartHeader = new CartHeaderViewModel
                 {
-                    UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value
+                    UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value,
+                    CouponCode = ""
                 }
             };
 
-            CartDetailViewModel cartDetail = new CartDetailViewModel()
+            //CartDetailViewModel cartDetail = 
+
+            List<CartDetailViewModel> cartDetails = new List<CartDetailViewModel>()
             {
-                Count = model.Count,
-                ProductId = model.Id,
-                Product = await _productService.FindProductById(model.Id, token)
+                new CartDetailViewModel()
+                {
+                    Count = model.Count,
+                    ProductId = model.Id,
+                    Product = await _productService.FindProductById(model.Id, token)
+                }
             };
 
-            List<CartDetailViewModel> cartDetails = new List<CartDetailViewModel>();
-            cartDetails.Add(cartDetail);
             cart.CartDetails = cartDetails;
 
              var response = await _cartService.AddItemToCart(cart, token);

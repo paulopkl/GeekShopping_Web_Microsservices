@@ -6,7 +6,7 @@ namespace GeekShopping.CartAPI.Repository
     {
         Task<CartVO> FindCartByUserId(string userId);
 
-        Task<CartVO> AddOrUpdateCart(CartVO cart);
+        Task<Object> AddOrUpdateCart(CartVO cart);
 
         Task<bool> RemoveFromCart(long cartDetailsId);
 

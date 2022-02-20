@@ -51,26 +51,6 @@ namespace GeekShopping.CartAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Carts",
-                columns: table => new
-                {
-                    id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CartHeaderId = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Carts", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_Carts_TCartHeader_CartHeaderId",
-                        column: x => x.CartHeaderId,
-                        principalTable: "TCartHeader",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "TCartDetail",
                 columns: table => new
                 {
@@ -78,17 +58,11 @@ namespace GeekShopping.CartAPI.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CartHeaderId = table.Column<long>(type: "bigint", nullable: false),
                     ProductId = table.Column<long>(type: "bigint", nullable: false),
-                    count = table.Column<int>(type: "int", nullable: false),
-                    CartId = table.Column<long>(type: "bigint", nullable: true)
+                    count = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TCartDetail", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_TCartDetail_Carts_CartId",
-                        column: x => x.CartId,
-                        principalTable: "Carts",
-                        principalColumn: "id");
                     table.ForeignKey(
                         name: "FK_TCartDetail_TCartHeader_CartHeaderId",
                         column: x => x.CartHeaderId,
@@ -105,19 +79,9 @@ namespace GeekShopping.CartAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carts_CartHeaderId",
-                table: "Carts",
-                column: "CartHeaderId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TCartDetail_CartHeaderId",
                 table: "TCartDetail",
                 column: "CartHeaderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TCartDetail_CartId",
-                table: "TCartDetail",
-                column: "CartId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TCartDetail_ProductId",
@@ -131,13 +95,10 @@ namespace GeekShopping.CartAPI.Migrations
                 name: "TCartDetail");
 
             migrationBuilder.DropTable(
-                name: "Carts");
+                name: "TCartHeader");
 
             migrationBuilder.DropTable(
                 name: "TProduct");
-
-            migrationBuilder.DropTable(
-                name: "TCartHeader");
         }
     }
 }

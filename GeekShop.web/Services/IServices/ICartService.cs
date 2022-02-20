@@ -6,7 +6,7 @@ namespace GeekShop.web.Services.IServices
     {
         Task<CartViewModel> FindCartByUserId(string userId, string token);
 
-        Task<CartViewModel> AddItemToCart(CartViewModel cart, string token);
+        Task<Object> AddItemToCart(CartViewModel cart, string token);
         
         Task<CartViewModel> UpdateCart(CartViewModel cart, string token);
         

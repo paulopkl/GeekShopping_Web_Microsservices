@@ -32,7 +32,7 @@ namespace GeekShop.web.Services.Utils
             return false;
         }
 
-        public static Task<HttpResponseMessage> PostAsJson<T>(this HttpClient httpClient, string url, T data)
+        public static async Task<HttpResponseMessage> PostAsJson<T>(this HttpClient httpClient, string url, T data)
         {
             var dataAsString = JsonSerializer.Serialize(data);
 
@@ -40,7 +40,9 @@ namespace GeekShop.web.Services.Utils
 
             content.Headers.ContentType = _contentType;
 
-            return httpClient.PostAsync(url, content);
+            var response = await httpClient.PostAsync(url, content);
+
+            return response;
         }
 
         public static Task<HttpResponseMessage> PutAsJson<T>(this HttpClient httpClient, string url, T data)

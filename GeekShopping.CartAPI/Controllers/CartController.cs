@@ -4,7 +4,7 @@ using GeekShopping.CartAPI.Data.ValueObjects;
 using GeekShopping.CartAPI.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShopping.CouponAPI.Controllers
+namespace GeekShopping.CartAPI.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
