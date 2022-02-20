@@ -1,4 +1,6 @@
-# Project Title
+# Project -> GeekShopping Web
+
+ - A fake ecommerce, developed in the course "Arquitetura de Microsserviços do 0 com ASP.NET, .NET 6 e C#" and built with CSharp in Front and Backend. The content covered is focused on the building of microsservices (some API'S), Oauth2, JWT, RabbitMQ and Ocelot as API Gateway
 
 ## Pages
 
