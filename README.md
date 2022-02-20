@@ -32,6 +32,6 @@
     <img src="https://raw.githubusercontent.com/paulopkl/GeekShopping_Web_Microsservices/master/MockedImages/Confirmation_page.JPG" width="80%">
 </p>
 
-## Project APIS final Architeture
+## Microsservices final Architeture
 
 <img src="https://raw.githubusercontent.com/paulopkl/GeekShopping_Web_Microsservices/master/MockedImages/Final_Architeture.JPG">
