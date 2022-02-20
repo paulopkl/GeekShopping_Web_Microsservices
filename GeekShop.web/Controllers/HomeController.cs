@@ -54,8 +54,6 @@ namespace GeekShop.web.Controllers
                 }
             };
 
-            //CartDetailViewModel cartDetail = 
-
             List<CartDetailViewModel> cartDetails = new List<CartDetailViewModel>()
             {
                 new CartDetailViewModel()

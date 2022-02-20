@@ -57,7 +57,7 @@
                     <div class="card mt-4">
                         <div class="card-body">
                             <div class="d-none d-lg-block">
-                                <div class="row text-danger">
+                                <div class="row text-danger text-center">
                                     <div class="col-6">
                                         Product Details
                                     </div>
@@ -72,12 +72,14 @@
                             <hr/>
                             @foreach (var item in Model.CartDetails)
                             {
-                                <div class="row h-100">
-                                    <div class="col-6">
+                                <div class="row h-100 text-center">
+                                    <div class="col-6 text-start">
                                         <span style="font-size: 20px;">@item.Product.Name</span>
                                     </div>
                                     <div class="col-3">
-                                        <span style="font-size: 17px;">@item.Product.Price</span>
+                                        <span style="font-size: 17px;">
+                                            @((item.Product.Price).ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR")))
+                                        </span>
                                     </div>
                                     <div class="col-3">
                                         <span style="font-size: 17px;">@item.Product.Count</span>

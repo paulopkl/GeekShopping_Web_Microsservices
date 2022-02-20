@@ -24,7 +24,7 @@ namespace GeekShop.web.Services
             return await response.ReadContentAs<CartViewModel>();
         }
 
-        public async Task<Object> AddItemToCart(CartViewModel model, string token)
+        public async Task<CartViewModel> AddItemToCart(CartViewModel model, string token)
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -34,8 +34,9 @@ namespace GeekShop.web.Services
             else
             {
                 var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
 
-                return badResultContent;
+                throw new Exception("Something went wrong!");
             }
         }
 
@@ -46,7 +47,13 @@ namespace GeekShop.web.Services
             var response = await _client.PutAsJson($"{BasePath}/update-cart", model);
 
             if (response.IsSuccessStatusCode) return await response.ReadContentAs<CartViewModel>();
-            else throw new Exception("Something went wrong!");
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
+
+                throw new Exception("Something went wrong!");
+            }
         }
 
         public async Task<bool> RemoveFromCart(long cartId, string token)
@@ -56,7 +63,13 @@ namespace GeekShop.web.Services
             var response = await _client.DeleteAsync($"{BasePath}/remove-cart/{cartId}");
 
             if (response.IsSuccessStatusCode) return await response.ReadContentAs<bool>();
-            else throw new Exception("Something went wrong!");
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
+
+                throw new Exception("Something went wrong!");
+            }
         }
 
         public async Task<bool> ApplyCoupon(CartViewModel model, string token)
@@ -66,7 +79,13 @@ namespace GeekShop.web.Services
             var response = await _client.PostAsJson($"{BasePath}/apply-coupon", model);
 
             if (response.IsSuccessStatusCode) return await response.ReadContentAs<bool>();
-            else throw new Exception("Something went wrong!");
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
+
+                throw new Exception("Something went wrong!");
+            }
         }
 
         public async Task<bool> ClearCart(string userId, string token)
@@ -98,7 +117,13 @@ namespace GeekShop.web.Services
             {
                 return "Coupon Price has changed, please confirm!";
             }
-            else throw new Exception("Something went wrong!");
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
+
+                throw new Exception("Something went wrong!");
+            }
         }
     }
 }

@@ -36,7 +36,7 @@ builder.Services.AddControllers();
             "Bearer",
             options =>
             {
-                options.Authority = builder.Configuration["Authority"];
+                options.Authority = "https://localhost:4435/";
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = false
@@ -54,9 +54,6 @@ builder.Services.AddControllers();
         });
     });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-
     // Configuring Swagger
     builder.Services.AddSwaggerGen(c =>
     {
@@ -71,30 +68,35 @@ builder.Services.AddEndpointsApiExplorer();
             Scheme = "Bearer"
         });
 
-        c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+        c.AddSecurityRequirement(
+            new OpenApiSecurityRequirement {
+                {
+                    new OpenApiSecurityScheme
                     {
-                        new OpenApiSecurityScheme
+                        Reference = new OpenApiReference
                         {
-                            Reference = new OpenApiReference
-                            {
-                                Id = "Bearer",
-                                Type = ReferenceType.SecurityScheme
-                            },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header,
+                            Id = "Bearer",
+                            Type = ReferenceType.SecurityScheme
                         },
-                        new List<string> ()
-                    }
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header,
+                    },
+                    new List<string> ()
                 }
-            );
+            }
+        );
     });
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

@@ -16,14 +16,14 @@ namespace GeekShopping.CouponAPI.DB.Model.Context
             {
                 Id = 1,
                 CouponCode = "PAULO_10-02-2022",
-                DescountAmount = 10
+                DiscountAmount = 10
             });
 
             modelBuilder.Entity<Coupon>().HasData(new Coupon
             {
                 Id = 2,
                 CouponCode = "PAULO_30-03-2022",
-                DescountAmount = 15
+                DiscountAmount = 15
             });
         }
     }

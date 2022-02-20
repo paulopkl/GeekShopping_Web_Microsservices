@@ -51,7 +51,14 @@ namespace GeekShop.web.Services
             var response = await _client.PutAsJson(BasePath, model);
 
             if (response.IsSuccessStatusCode) return await response.ReadContentAs<ProductViewModel>();
-            else throw new Exception("Something went wrong!");
+            else
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
+
+                throw new Exception("Something went wrong!");
+            }
         }
 
         public async Task<bool> DeleteProductById(long id, string token)
@@ -61,8 +68,13 @@ namespace GeekShop.web.Services
             var response = await _client.DeleteAsync($"{BasePath}/{id}");
 
             if (response.IsSuccessStatusCode) return response.HandleNoContent();
+            else
+            {
+                var badResultContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {badResultContent}");
 
-            else throw new Exception("Something went wrong!");
+                throw new Exception("Something went wrong!");
+            }
         }
     }
 }

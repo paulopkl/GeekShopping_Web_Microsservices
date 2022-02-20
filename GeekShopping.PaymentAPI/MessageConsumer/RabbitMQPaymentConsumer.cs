@@ -14,9 +14,7 @@ namespace GeekShopping.PaymentAPI.MessageConsumer
         private IModel _channel;
         private readonly IProcessPayment _processPayment;
         private IRabbitMQMessageSender _rabbitMQMessageSender;
-        private const string _checkoutQueue = "checkoutqueue";
         private const string _paymentQueue = "orderpaymentprocessqueue";
-        private const string _paymentResultQueue = "orderpaymentresultqueue";
 
         public RabbitMQPaymentConsumer(IProcessPayment processPayment, IRabbitMQMessageSender rabbitMQMessageSender)
         {

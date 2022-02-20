@@ -19,6 +19,11 @@ namespace GeekShopping.CartAPI.Repository
         public async Task<CouponVO> GetCoupon(string couponCode, string token)
         {
             // Set token in request header
+            if (token.StartsWith("Bearer "))
+            {
+                token = token.Substring(7);
+            }
+
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var response = await _client.GetAsync($"{BasePath}/{couponCode}");
